@@ -14,3 +14,4 @@ requirements.txt
 *.jpg
 *.avi
 *.mp4
+/car_brand

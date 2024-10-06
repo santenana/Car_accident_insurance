@@ -22,12 +22,17 @@ def read_video_file(path,modelo):
     Video(path,modelo)
 
 # Función para leer archivos JPG o PNG
-def read_image_file(path):
-    img = Image.open(path)
-    img = img.convert('RGB')
-    img_array = np.array(img)
-    return img_array
-
+def imagen_detect(path,model):
+    res = model.predict(path,imgsz=640)
+    imagen = res[0].plot()
+    labels = res[0].names
+    predicted_labels = []
+    for result in res:
+        for pred in result.boxes:
+            label_index = int(pred.cls)
+            label = labels[label_index]
+            predicted_labels.append(label)
+    return imagen,predicted_labels
 
 def main():
     # Inicializar el estado de la sesión
@@ -36,7 +41,6 @@ def main():
         st.session_state.label = None
         st.session_state.proba = None
         st.session_state.heatmap = None
-        st.session_state.pdf_buffer = None  # Estado para el PDF generado
     
     st.title("🚗 Car-State Accident Detection 🚨")
 
@@ -45,14 +49,14 @@ def main():
     patient_id = st.text_input("ID del paciente:")
 
     # Cargar array
-    uploaded_file = st.file_uploader("📁 Cargar Imágen (DICOM, JPG, PNG)", type=["dcm", "jpg", "jpeg", "png"])
+    uploaded_file = st.file_uploader("📁 Cargar Imágen o Videos", type=["dcm", "jpg", "jpeg", "png"])
 
     if uploaded_file is not None:
         file_extension = os.path.splitext(uploaded_file.name)[1].lower()
         if file_extension == ".dcm":
             st.session_state.image_array = read_video_file(uploaded_file)
         else:
-            st.session_state.image_array = read_image_file(uploaded_file)
+            st.session_state.image_array = imagen_detect(uploaded_file)
         
         # Mostrar array original
         st.image(st.session_state.image_array, caption="🖼 Imágen Radiográfica cargada", use_column_width=True)
@@ -68,14 +72,7 @@ def main():
             st.image(st.session_state.heatmap, caption="🔥 Imágen Radiográfica con zonas afectadas", use_column_width=True)
 
             # Generar el PDF solo si se ha realizado una predicción
-            if st.session_state.label is not None:
-                st.session_state.pdf_buffer = generate_pdf(
-                    patient_id,
-                    st.session_state.label,
-                    st.session_state.proba,
-                    st.session_state.image_array,
-                    st.session_state.heatmap
-                )
+
         
     # Botón de descarga del PDF (fuera del flujo de predicción)
     if st.session_state.pdf_buffer is not None:
