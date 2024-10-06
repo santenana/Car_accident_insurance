@@ -1,0 +1,16 @@
+/Data
+/Detection
+/imagenes_carros
+/Car_Accident
+*.zip
+requirements.txt
+/__pycache__
+*.yaml
+/detectron2
+/runs
+*.pt
+*.csv
+*.jpeg
+*.jpg
+*.avi
+*.mp4
