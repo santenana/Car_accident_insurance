@@ -1,4 +1,4 @@
-
+﻿
 ## Car Accident Detection (under construction 🏗️)
 In this mini-project, tools such as YOLO, Torch, Roboflow (from Ultralytics), and the CUDA API will be used to train a neural network for object detection, specifically for detecting types of vehicle accidents. The final product consists of a small app that allows identifying the type of accident through a video or image to automate the process of determining how much money the insurance company should compensate the affected parties.
 
