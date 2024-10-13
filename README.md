@@ -3,8 +3,7 @@
 In this mini-project, tools such as YOLO, Torch, Roboflow (from Ultralytics), and the CUDA API will be used to train a neural network for object detection, specifically for detecting types of vehicle accidents. The final product consists of a small app that allows identifying the type of accident through a video or image to automate the process of determining how much money the insurance company should compensate the affected parties.
 
 
-## RoboFlow, YOLO and CUDA  ![Nvidia_logo](https://cdn.icon-icons.com/icons2/2699/PNG/512/nvidia_logo_icon_169902.png =x25)
-<image src="https://cdn.icon-icons.com/icons2/2699/PNG/512/nvidia_logo_icon_169902.png">
+## RoboFlow, YOLO and CUDA <image src="https://cdn.icon-icons.com/icons2/2699/PNG/512/nvidia_logo_icon_169902.png"  width="25">
 
 Using<a href="https://universe.roboflow.com/" title="Title"> RoboFlow</a>, different bounding boxes were created for image detection, with six labels: Motorcycle, Vehicle, Minor, Moderate, Severe, and Total Loss. These labels are used to recognize the various variables that may exist in motor vehicle accidents. The advantage of this tool lies in its high compatibility with Meta's system for AI-based object detection, which simplifies the process of manually defining the coordinates of the bounding boxes and their respective labels.
 
