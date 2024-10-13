@@ -4,7 +4,7 @@ In this mini-project, tools such as YOLO, Torch, Roboflow (from Ultralytics), an
 
 
 ## RoboFlow, YOLO and CUDA  ![Nvidia_logo](https://cdn.icon-icons.com/icons2/2699/PNG/512/nvidia_logo_icon_169902.png =x25)
-<image src="/home/santenana/Proyectos/02_ObjectDetection/Nvidia.png">
+<image src="https://cdn.icon-icons.com/icons2/2699/PNG/512/nvidia_logo_icon_169902.png">
 
 Using<a href="https://universe.roboflow.com/" title="Title"> RoboFlow</a>, different bounding boxes were created for image detection, with six labels: Motorcycle, Vehicle, Minor, Moderate, Severe, and Total Loss. These labels are used to recognize the various variables that may exist in motor vehicle accidents. The advantage of this tool lies in its high compatibility with Meta's system for AI-based object detection, which simplifies the process of manually defining the coordinates of the bounding boxes and their respective labels.
 
