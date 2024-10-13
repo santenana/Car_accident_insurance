@@ -23,7 +23,7 @@ def modelo_segmentation(dataset,epochs,imgsz,batch):
     # return best_model
 
 
-dataset = '/home/santenana/Proyectos/02_ObjectDetection/Car_Accident/data.yaml'
+dataset = '/home/santenana/Proyectos/02_ObjectDetection/car_brand/data.yaml'
 epochs = 25
 imgsz = 640
 batch = 32

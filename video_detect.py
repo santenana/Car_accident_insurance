@@ -3,7 +3,7 @@ import cv2 as cv2
 from collections import Counter
 from ultralytics import YOLO 
 
-best_model = YOLO("/home/santenana/Proyectos/02_ObjectDetection/runs/detect/train12/weights/best.pt")
+best_model = YOLO("/home/santenana/Proyectos/02_ObjectDetection/best.pt")
 
 def Video(path_video,best_model):
     video = cv2.VideoCapture(path_video)  
