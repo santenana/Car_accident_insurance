@@ -13,12 +13,10 @@ from detectron2.utils.visualizer import Visualizer
 from detectron2.data import MetadataCatalog
 from detectron2.data.catalog import DatasetCatalog
 from ultralytics import YOLO
-def modelo_detection(dataset,epochs,imgsz,batch):
-    # model = YOLO("yolov8n-seg.yaml")
-    model = YOLO('yolo11n.pt')
-    # model = YOLO('yolov8n-seg.yaml').load('yolov8n.pt')
-    results = model.train(data=dataset, epochs=epochs, imgsz=imgsz,batch=batch)
 
+def modelo_detection(dataset,epochs,imgsz,batch):
+    odel = YOLO('yolo11n.pt')
+    results = model.train(data=dataset, epochs=epochs, imgsz=imgsz,batch=batch)
     best_model = YOLO("/home/santenana/Proyectos/02_ObjectDetection/runs/detect/train/weights/best.pt")
     return best_model
 

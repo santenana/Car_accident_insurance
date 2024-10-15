@@ -6,8 +6,10 @@ from ultralytics import YOLO
 import matplotlib.pyplot as plt
 import cv2
 
-##best_model = YOLO("/home/santenana/Proyectos/02_ObjectDetection/runs/detect/train12/weights/best.pt")
-##imagen_2 = cv2.imwrite("/home/santenana/Proyectos/02_ObjectDetection/Deteccion4.jpg",imagen)
+best_model = YOLO("/home/santenana/Proyectos/02_ObjectDetection/runs/detect/train12/weights/best.pt")
+path_image = "/home/santenana/Proyectos/02_ObjectDetection/Deteccion4.jpg"
+
+
 def imagen_detect(path,model):
     res = model.predict(path,imgsz=640)
     imagen = res[0].plot()
@@ -20,3 +22,4 @@ def imagen_detect(path,model):
             predicted_labels.append(label)
 
     return imagen,predicted_labels
+# imagen_2 = cv2.imwrite("/home/santenana/Proyectos/02_ObjectDetection/Deteccion4.jpg",imagen)
